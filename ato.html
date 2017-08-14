@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+
+<html >
+
+<head>
+ 
+<style>
+body { 
+	background: #EEE; 
+	overflow-x:hidden;
+}
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+.clearfix {
+    *zoom: 1;
+}
+
+.container {
+    position: relative;
+    margin: 0px auto;
+    padding: 50px 0;
+    clear: both;
+}
+@media only screen and (min-width: 1200px) {
+    .container {
+        width: 1210px;
+    }
+}
+
+@media only screen and (min-width: 960px) and (max-width: 1199px) {
+    .container {
+        width: 1030px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+    .container {
+        width: 682px;
+    }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    .container {
+        width: 428px;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (max-width: 479px) {
+    .container {
+        width: 320px;
+        margin: 0 auto;
+    }
+}
+
+
+  
+.mcd-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: #FFF;
+  /*height: 100px;*/
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  
+  /* == */
+  width: 250px;
+  /* == */
+}
+.mcd-menu li {
+  position: relative;
+  /*float:left;*/
+}
+.mcd-menu li a {
+  display: block;
+  text-decoration: none;
+  padding: 12px 20px;
+  color: #777;
+  /*text-align: center;
+  border-right: 1px solid #E7E7E7;*/
+  
+  /* == */
+  text-align: left;
+  height: 36px;
+  position: relative;
+  border-bottom: 1px solid #EEE;
+  /* == */
+}
+.mcd-menu li a i {
+  /*display: block;
+  font-size: 30px;
+  margin-bottom: 10px;*/
+  
+  /* == */
+  float: left;
+  font-size: 20px;
+  margin: 0 10px 0 0;
+  /* == */
+  
+}
+/* == */
+.mcd-menu li a p {
+  float: left;
+  margin: 0 ;
+}
+/* == */
+
+.mcd-menu li a strong {
+  display: block;
+  text-transform: uppercase;
+}
+.mcd-menu li a small {
+  display: block;
+  font-size: 10px;
+}
+
+.mcd-menu li a i, .mcd-menu li a strong, .mcd-menu li a small {
+  position: relative;
+  
+  transition: all 300ms linear;
+  -o-transition: all 300ms linear;
+  -ms-transition: all 300ms linear;
+  -moz-transition: all 300ms linear;
+  -webkit-transition: all 300ms linear;
+}
+.mcd-menu li:hover > a i {
+    opacity: 1;
+    -webkit-animation: moveFromTop 300ms ease-in-out;
+    -moz-animation: moveFromTop 300ms ease-in-out;
+    -ms-animation: moveFromTop 300ms ease-in-out;
+    -o-animation: moveFromTop 300ms ease-in-out;
+    animation: moveFromTop 300ms ease-in-out;
+}
+.mcd-menu li:hover a strong {
+    opacity: 1;
+    -webkit-animation: moveFromLeft 300ms ease-in-out;
+    -moz-animation: moveFromLeft 300ms ease-in-out;
+    -ms-animation: moveFromLeft 300ms ease-in-out;
+    -o-animation: moveFromLeft 300ms ease-in-out;
+    animation: moveFromLeft 300ms ease-in-out;
+}
+.mcd-menu li:hover a small {
+    opacity: 1;
+    -webkit-animation: moveFromRight 300ms ease-in-out;
+    -moz-animation: moveFromRight 300ms ease-in-out;
+    -ms-animation: moveFromRight 300ms ease-in-out;
+    -o-animation: moveFromRight 300ms ease-in-out;
+    animation: moveFromRight 300ms ease-in-out;
+}
+
+.mcd-menu li:hover > a {
+  color: #e67e22;
+}
+.mcd-menu li a.active {
+  position: relative;
+  color: #e67e22;
+  border:0;
+  /*border-top: 4px solid #e67e22;
+  border-bottom: 4px solid #e67e22;
+  margin-top: -4px;*/
+  box-shadow: 0 0 5px #DDD;
+  -moz-box-shadow: 0 0 5px #DDD;
+  -webkit-box-shadow: 0 0 5px #DDD;
+  
+  /* == */
+  border-left: 4px solid #e67e22;
+  border-right: 4px solid #e67e22;
+  margin: 0 -4px;
+  /* == */
+}
+.mcd-menu li a.active:before {
+  content: "";
+  position: absolute;
+  /*top: 0;
+  left: 45%;
+  border-top: 5px solid #e67e22;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;*/
+  
+  /* == */
+  top: 42%;
+  left: 0;
+  border-left: 5px solid #e67e22;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  /* == */
+}
+
+/* == */
+.mcd-menu li a.active:after {
+  content: "";
+  position: absolute;
+  top: 42%;
+  right: 0;
+  border-right: 5px solid #e67e22;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+}
+/* == */
+
+@-webkit-keyframes moveFromTop {
+    from {
+        opacity: 0;
+        -webkit-transform: translateY(200%);
+        -moz-transform: translateY(200%);
+        -ms-transform: translateY(200%);
+        -o-transform: translateY(200%);
+        transform: translateY(200%);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: translateY(0%);
+        -moz-transform: translateY(0%);
+        -ms-transform: translateY(0%);
+        -o-transform: translateY(0%);
+        transform: translateY(0%);
+    }
+}
+@-webkit-keyframes moveFromLeft {
+    from {
+        opacity: 0;
+        -webkit-transform: translateX(200%);
+        -moz-transform: translateX(200%);
+        -ms-transform: translateX(200%);
+        -o-transform: translateX(200%);
+        transform: translateX(200%);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: translateX(0%);
+        -moz-transform: translateX(0%);
+        -ms-transform: translateX(0%);
+        -o-transform: translateX(0%);
+        transform: translateX(0%);
+    }
+}
+@-webkit-keyframes moveFromRight {
+    from {
+        opacity: 0;
+        -webkit-transform: translateX(-200%);
+        -moz-transform: translateX(-200%);
+        -ms-transform: translateX(-200%);
+        -o-transform: translateX(-200%);
+        transform: translateX(-200%);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: translateX(0%);
+        -moz-transform: translateX(0%);
+        -ms-transform: translateX(0%);
+        -o-transform: translateX(0%);
+        transform: translateX(0%);
+    }
+}
+
+
+
+.mcd-menu li ul,
+.mcd-menu li ul li ul {
+  position: absolute;
+  height: auto;
+  min-width: 200px;
+  padding: 0;
+  margin: 0;
+  background: #FFF;
+  /*border-top: 4px solid #e67e22;*/
+  opacity: 0;
+  visibility: hidden;
+  transition: all 300ms linear;
+  -o-transition: all 300ms linear;
+  -ms-transition: all 300ms linear;
+  -moz-transition: all 300ms linear;
+  -webkit-transition: all 300ms linear;
+  /*top: 130px;*/
+  z-index: 1000;
+  
+  /* == */
+  left:280px;
+  top: 0px;
+  border-left: 4px solid #e67e22;
+  /* == */
+}
+.mcd-menu li ul:before {
+  content: "";
+  position: absolute;
+  /*top: -8px;
+  left: 23%;
+  border-bottom: 5px solid #e67e22;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;*/
+  
+  /* == */
+  top: 25px;
+  left: -9px;
+  border-right: 5px solid #e67e22;
+  border-bottom: 5px solid transparent;
+  border-top: 5px solid transparent;
+  /* == */
+}
+.mcd-menu li:hover > ul,
+.mcd-menu li ul li:hover > ul {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  /*top: 100px;*/
+  
+  /* == */
+  left:250px;
+  /* == */
+}
+/*.mcd-menu li ul li {
+  float: none;
+}*/
+.mcd-menu li ul li a {
+  padding: 10px;
+  text-align: left;
+  border: 0;
+  border-bottom: 1px solid #EEE;
+  
+  /* == */
+  height: auto;
+  /* == */
+}
+.mcd-menu li ul li a i {
+  font-size: 16px;
+  display: inline-block;
+  margin: 0 10px 0 0;
+}
+.mcd-menu li ul li ul {
+  left: 230px;
+  top: 0;
+  border: 0;
+  border-left: 4px solid #e67e22;
+}  
+.mcd-menu li ul li ul:before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  /*left: -14px;*/
+  /* == */
+  left: -9px;
+  /* == */
+  border-right: 5px solid #e67e22;
+  border-bottom: 5px solid transparent;
+  border-top: 5px solid transparent;
+}
+.mcd-menu li ul li:hover > ul {
+  top: 0px;
+  left: 200px;
+}
+
+
+
+/*.mcd-menu li.float {
+  float: right;
+}*/
+.mcd-menu li a.search {
+  /*padding: 29px 20px 30px 10px;*/
+  padding: 10px 10px 15px 10px;
+  clear: both;
+}
+.mcd-menu li a.search i {
+  margin: 0;
+  display: inline-block;
+  font-size: 18px;
+}
+.mcd-menu li a.search input {
+  border: 1px solid #EEE;
+  padding: 10px;
+  background: #FFF;
+  outline: none;
+  color: #777;
+  
+  /* == */
+  width:170px;
+  float:left;
+  /* == */
+}
+.mcd-menu li a.search button {
+  border: 1px solid #e67e22;
+  /*padding: 10px;*/
+  background: #e67e22;
+  outline: none;
+  color: #FFF;
+  margin-left: -4px;
+  
+  /* == */
+  float:left;
+  padding: 10px 10px 11px 10px;
+  /* == */
+}
+.mcd-menu li a.search input:focus {
+  border: 1px solid #e67e22;
+}
+
+
+.search-mobile { 
+	display:none !important;
+	background:#e67e22;
+	border-left:1px solid #e67e22;
+	border-radius:0 3px 3px 0;
+}
+.search-mobile i { 
+	color:#FFF; 
+	margin:0 !important;
+}
+
+
+@media only screen and (min-width: 960px) and (max-width: 1199px) {
+    .mcd-menu {
+		margin-left:10px;
+	}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+    .mcd-menu {
+		width: 200px;
+	}
+	.mcd-menu li a {
+		height:30px;
+	}
+	.mcd-menu li a i {
+		font-size: 22px;
+	}
+	.mcd-menu li a strong {
+		font-size: 12px;
+	}
+	.mcd-menu li a small {
+		font-size: 10px;
+	}	
+	.mcd-menu li a.search input {
+		width: 120px;
+		font-size: 12px;
+	}
+	.mcd-menu li a.search buton{
+		padding: 8px 10px 9px 10px;
+	}
+	.mcd-menu li > ul {
+		min-width:180px;
+	}
+	.mcd-menu li:hover > ul {
+		min-width:180px;
+		left:200px;
+	}
+	.mcd-menu li ul li > ul, .mcd-menu li ul li ul li > ul {
+		min-width:150px;
+	}
+	.mcd-menu li ul li:hover > ul {
+		left:180px;
+		min-width:150px;
+	}
+	.mcd-menu li ul li ul li:hover > ul {
+		left:150px;
+		min-width:150px;
+	}
+	.mcd-menu li ul a {
+		font-size:12px;
+	}
+	.mcd-menu li ul a i {
+		font-size:14px;
+	}
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+	
+	.mcd-menu { 
+		width: 50px;
+	}
+	.mcd-menu li a { 
+		position: relative;
+		padding: 12px 16px;
+		height:20px;
+	}
+	.mcd-menu li a small { 
+		display: none;
+	}
+	.mcd-menu li a strong { 
+		display: none;
+	}
+	.mcd-menu li a:hover strong,.mcd-menu li a.active strong {
+		display:block;
+		font-size:10px;
+		padding:3px 0;
+		position:absolute;
+		bottom:0px;
+		left:0;
+		background:#e67e22;
+		color:#FFF;
+		min-width:100%;
+		text-transform:lowercase;
+		font-weight:normal;
+		text-align:center;
+	}
+	.mcd-menu li .search { 
+		display: none;
+	}
+	
+	.mcd-menu li > ul {
+		min-width:180px;
+		left:70px;
+	}
+	.mcd-menu li:hover > ul {
+		min-width:180px;
+		left:50px;
+	}
+	.mcd-menu li ul li > ul, .mcd-menu li ul li ul li > ul {
+		min-width:150px;
+	}
+	.mcd-menu li ul li:hover > ul {
+		left:180px;
+		min-width:150px;
+	}
+	.mcd-menu li ul li ul li > ul {
+		left:35px;
+		top: 45px;
+		border:0;
+		border-top:4px solid #e67e22;
+	}
+	.mcd-menu li ul li ul li > ul:before {
+		left:30px;
+		top: -9px;
+		border:0;
+		border-bottom:5px solid #e67e22;
+		border-left:5px solid transparent;
+		border-right:5px solid transparent;
+	}
+	.mcd-menu li ul li ul li:hover > ul {
+		left:30px;
+		min-width:150px;
+		top: 35px;
+	}
+	.mcd-menu li ul a {
+		font-size:12px;
+	}
+	.mcd-menu li ul a i {
+		font-size:14px;
+	}
+	
+}
+
+@media only screen and (max-width: 479px) {
+    .mcd-menu { 
+		width: 50px;
+	}
+	.mcd-menu li a { 
+		position: relative;
+		padding: 12px 16px;
+		height:20px;
+	}
+	.mcd-menu li a small { 
+		display: none;
+	}
+	.mcd-menu li a strong { 
+		display: none;
+	}
+	.mcd-menu li a:hover strong,.mcd-menu li a.active strong {
+		display:block;
+		font-size:10px;
+		padding:3px 0;
+		position:absolute;
+		bottom:0px;
+		left:0;
+		background:#e67e22;
+		color:#FFF;
+		min-width:100%;
+		text-transform:lowercase;
+		font-weight:normal;
+		text-align:center;
+	}
+	.mcd-menu li .search { 
+		display: none;
+	}
+	
+	.mcd-menu li > ul {
+		min-width:180px;
+		left:70px;
+	}
+	.mcd-menu li:hover > ul {
+		min-width:180px;
+		left:50px;
+	}
+	.mcd-menu li ul li > ul, .mcd-menu li ul li ul li > ul {
+		min-width:150px;
+	}
+	.mcd-menu li ul li:hover > ul {
+		left:180px;
+		min-width:150px;
+	}
+	.mcd-menu li ul li ul li > ul {
+		left:35px;
+		top: 45px;
+		border:0;
+		border-top:4px solid #e67e22;
+	}
+	.mcd-menu li ul li ul li > ul:before {
+		left:30px;
+		top: -9px;
+		border:0;
+		border-bottom:5px solid #e67e22;
+		border-left:5px solid transparent;
+		border-right:5px solid transparent;
+	}
+	.mcd-menu li ul li ul li:hover > ul {
+		left:30px;
+		min-width:150px;
+		top: 35px;
+	}
+	.mcd-menu li ul a {
+		font-size:12px;
+	}
+	.mcd-menu li ul a i {
+		font-size:14px;
+	}
+    
+}
+
+</style>
+</head>
+
+
+<body>
+<body onload="disco()">
+<script language="JavaScript">
+<!--
+//you can assign the initial color of the background here
+r=255;
+g=255;
+b=255;
+flag=0;
+t=new Array;
+o=new Array;
+d=new Array;
+
+function hex(a,c)
+{
+t[a]=Math.floor(c/16)
+o[a]=c%16
+switch (t[a])
+{
+case 10:
+t[a]='A';
+break;
+case 11:
+t[a]='B';
+break;
+case 12:
+t[a]='C';
+break;
+case 13:
+t[a]='D';
+break;
+case 14:
+t[a]='E';
+break;
+case 15:
+t[a]='F';
+break;
+default:
+break;
+}
+switch (o[a])
+{
+case 10:
+o[a]='A';
+break;
+case 11:
+o[a]='B';
+break;
+case 12:
+o[a]='C';
+break;
+case 13:
+o[a]='D';
+break;
+case 14:
+o[a]='E';
+break;
+case 15:
+o[a]='F';
+break;
+default:
+break;
+}
+}
+
+function ran(a,c)
+{
+if ((Math.random()>2/3||c==0)&&c<255)
+{
+c++
+d[a]=2;
+}
+else
+{
+if ((Math.random()<=1/2||c==255)&&c>0)
+{
+c--
+d[a]=1;
+}
+else d[a]=0;
+}
+return c
+}
+function do_it(a,c)
+{
+if ((d[a]==2&&c<255)||c==0)
+{
+c++
+d[a]=2
+}
+else
+if ((d[a]==1&&c>0)||c==255)
+{
+c--;
+d[a]=1;
+}
+if (a==3)
+{
+if (d[1]==0&&d[2]==0&&d[3]==0)
+flag=1
+}
+return c
+}
+function disco()
+{
+if (flag==0)
+{
+r=ran(1, r);
+g=ran(2, g);
+b=ran(3, b);
+hex(1,r)
+hex(2,g)
+hex(3,b)
+document.body.style.background="#"+t[1]+o[1]+t[2]+o[2]+t[3]+o[3]
+flag=50
+}
+else
+{
+r=do_it(1, r)
+g=do_it(2,g)
+b=do_it(3,b)
+hex(1,r)
+hex(2,g)
+hex(3,b)
+document.body.style.background="#"+t[1]+o[1]+t[2]+o[2]+t[3]+o[3]
+flag--
+}
+
+setTimeout('disco()',50)
+}
+//-->
+</script>
+
+<center>
+<marquee>
+<font face="algerian" size="10" color="gray">ato(all things online)
+</marquee>
+<div class="container">
+<nav>
+<ul class="mcd-menu">
+<li>
+<a href="">
+<i class="fa fa-home"></i>
+<strong>Home</strong>
+<small>with ato</small>
+</a>
+</li>
+<li>
+<a href="http://www.ucnews.in/">
+<i class="fa fa-globe"></i>
+<strong>News</strong>
+<small>with ato</small>
+</a>
+</li>
+<li>
+<a href="#">
+<i class="fa fa-comments-o"></i>
+<strong>shoping</strong>
+<small>with ato</small>
+</a>
+<ul>
+<li><a href="https://www.flipkart.com/"><i class="fa fa-globe"></i>flipkart</a></li>
+<li>
+<a href="http://www.amazon.in/"><i class="fa fa-group"></i>amazon</a>
+</li>
+<li><a href="https://www.snapdeal.com/"><i class="fa fa-trophy"></i>snapdeal</a></li>
+<li><a href="http://www.shopclues.com/"><i class="fa fa-certificate"></i>shopclues</a></li>
+<li><a href="http://www.jabong.com/"><i class="fa fa-certificate"></i>jabong</a></li>
+<li><a href="http://www.mysmartprice.com/"><i class="fa fa-certificate"></i>my smart prize</a></li>
+<li><a href="https://www.ajio.com/"><i class="fa fa-certificate"></i>ajio</a></li>
+<li><a href="http://www.homeshop18.com/"><i class="fa fa-certificate"></i>homeshop18</a></li>
+</ul>
+</nav>
+
+<nav>
+<ul class="mcd-menu">
+<li>
+<li>
+<a href="#">
+<i class="fa fa-comments-o"></i>
+<strong>bus booking</strong>
+<small>with ato</small>
+</a>
+<ul>
+<li><a href="http://gsrtc.in/site/"><i class="fa fa-globe"></i>gsrtc</a></li>
+<li>
+<a href="http://www.ksrtc.in/oprs-web/"><i class="fa fa-group"></i>ksrtc</a>
+</li>
+<li><a href="http://busindia.com/busindia_TNSTC.jsp"><i class="fa fa-trophy"></i>tnstc(setc)</a></li>
+<li><a href="https://rsrtconline.rajasthan.gov.in/busenquiry/en"><i class="fa fa-certificate"></i>rsrtc</a></li>
+<li><a href="http://sbstc.co.in/"><i class="fa fa-certificate"></i>sbstc</a></li>
+<li><a href="https://www.redbus.in/"><i class="fa fa-certificate"></i>redbus</a></li>
+</ul>
+</nav>
+
+
+<nav>
+<ul class="mcd-menu">
+<li>
+<li>
+<a href="#">
+<i class="fa fa-comments-o"></i>
+<strong>car/taxi booking</strong>
+<small>with ato</small>
+</a>
+<ul>
+<li><a href="https://www.olacabs.com/"><i class="fa fa-globe"></i>ola cab</a></li>
+<li>
+<a href="https://www.merucabs.com/"><i class="fa fa-group"></i>meru cab</a>
+</li>
+<li><a href="https://www.uber.com/en-IN/ride/ubertaxi/"><i class="fa fa-trophy"></i>uber</a></li>
+</ul>
+</nav>
+
+<nav>
+<ul class="mcd-menu">
+<li>
+<li>
+<a href="#">
+<i class="fa fa-comments-o"></i>
+<strong>auto booking</strong>
+<small>with ato</small>
+</a>
+<ul>
+<li><a href="http://www.g-auto.org/"><i class="fa fa-globe"></i>G-auto</a></li>
+<li>
+<a href="https://www.olacabs.com/ola-autos"><i class="fa fa-group"></i>ola auto</a>
+</li>
+<li><a href="https://www.jugnoo.in/"><i class="fa fa-trophy"></i>jugnoo</a></li>
+</ul>
+</nav>
+
+<nav>
+<ul class="mcd-menu">
+<li>
+<li>
+<a href="#">
+<i class="fa fa-comments-o"></i>
+<strong>train booking</strong>
+<small>with ato</small>
+</a>
+<ul>
+<li><a href="http://www.bookmytrain.com/railways/pages/ngetportalhome.html"><i class="fa fa-globe"></i>book my train</a></li>
+<li>
+<a href="http://book.mustseeindia.com/trains"><i class="fa fa-group"></i>must see idea</a>
+</li>
+<li><a href="https://www.ixigo.com/trains"><i class="fa fa-trophy"></i>ixigo</a></li>
+<li><a href="https://www.travelkhana.com/travelkhana/indian-railways-reservation"><i class="fa fa-trophy"></i>travel khaana</a></li>
+</ul>
+</nav>
+
+<nav>
+<ul class="mcd-menu">
+<li>
+<li>
+<a href="#">
+<i class="fa fa-comments-o"></i>
+<strong>flight booking</strong>
+<small>with ato</small>
+</a>
+<ul>
+<li><a href="https://www.cleartrip.com/flights?gclid=CJC_wMbThdQCFdEQaAodjxcFGw"><i class="fa fa-globe"></i>clear trip</a></li>
+<li>
+<a href="https://www.makemytrip.com/flights" class="biliboard repeating"><i class="fa fa-group"></i>mmt flight</a>
+</li>
+<li><a href="https://www.skyscanner.co.in/"><i class="fa fa-trophy"></i>sky scanner</a></li>
+<li><a href="http://www.ezeego1.co.in/"><i class="fa fa-trophy"></i>ezeego</a></li>
+</ul>
+</nav>
+
+<nav>
+<ul class="mcd-menu">
+<li>
+<li>
+<a href="#">
+<i class="fa fa-comments-o"></i>
+<strong>hotel booking</strong>
+<small>with ato</small>
+</a>
+<ul>
+<li><a href="http://trivagohotels.hotel06.com/?gclid=CKGZjubRhdQCFVQeaAodZqkKtg"><i class="fa fa-globe"></i>trivago</a></li>
+<li>
+<a href="https://www.agoda.com/en-in/?cid=-145" class="biliboard repeating"><i class="fa fa-group"></i>agoda</a>
+</li>
+<li><a href="https://www.travelguru.com/"><i class="fa fa-trophy"></i>travel guru</a></li>
+<li><a href="https://www.oyorooms.com/"><i class="fa fa-trophy"></i>oyo</a></li>
+<li><a href="https://www.makemytrip.com/hotels"><i class="fa fa-trophy"></i>mmt hotel</a></li>
+<li><a href="https://www.goibibo.com/hotels/"><i class="fa fa-trophy"></i>goibibo hotels</a></li>
+</ul>
+</nav>
+<nav>
+<ul class="mcd-menu">
+<li>
+<li>
+<a href="#">
+<i class="fa fa-comments-o"></i>
+<strong>ONLINE BOOK/MAGAZINE</strong>
+<small>with ato</small>
+</a>
+<ul>
+<li><a href="https://www.readanybook.com/"><i class="fa fa-globe"></i>read any book</a></li>
+<li><a href="https://cybersafar.com/index.php/en/" class="biliboard repeating"><i class="fa fa-group"></i>cyber suffer</a></li>
+<li><a href="http://guj.safari-india.com/"><i class="fa fa-trophy"></i>saffari</a></li>
+</ul>
+</nav>
+
+<nav>
+<ul class="mcd-menu">
+<li>
+<li>
+<a href="#">
+<i class="fa fa-comments-o"></i>
+<strong>online cricket live score</strong>
+<small>with ato</small>
+</a>
+<ul>
+<li><a href="http://www.cricbuzz.com/"><i class="fa fa-globe"></i>cricbuzz</a></li>
+<li><a href="https://www.bet365.com/en/" class="biliboard repeating"><i class="fa fa-group"></i>bet365</a></li>
+<li><a href="http://www.espncricinfo.com/"><i class="fa fa-trophy"></i>cricinfo</a></li>
+<li><a href="https://cricket.yahoo.com/cricket/live-score/"><i class="fa fa-trophy"></i>yahoo cricket</a></li>
+</ul>
+</nav>
+
+<nav>
+<ul class="mcd-menu">
+<li>
+<li>
+<a href="#">
+<i class="fa fa-comments-o"></i>
+<strong>online cource(comp..)</strong>
+<small>with ato</small>
+</a>
+<ul>
+<li><a href="https://www.w3schools.com/html/"><i class="fa fa-globe"></i>html 5</a></li>
+<li><a href="https://www.w3schools.com/css/default.asp" class="biliboard repeating"><i class="fa fa-group"></i>css</a></li>
+<li><a href="https://www.w3schools.com/js/default.asp"><i class="fa fa-trophy"></i>js</a></li>
+<li><a href="https://www.w3schools.com/php/default.asp"><i class="fa fa-trophy"></i>php</a></li>
+<li><a href="https://www.w3schools.com/jquery/default.asp"><i class="fa fa-trophy"></i>jquery</a></li>
+<li><a href="https://www.w3schools.com/bootstrap/default.asp"><i class="fa fa-trophy"></i>bootstrap</a></li>
+<li><a href="https://www.w3schools.com/sql/default.asp"><i class="fa fa-trophy"></i>sql</a></li>
+<li><a href="https://www.w3schools.com/asp/default.asp"><i class="fa fa-trophy"></i>asp.net</a></li>
+<li><a href="https://www.sololearn.com/"><i class="fa fa-trophy"></i>sololearn</a></li>
+</ul>
+</nav>
+
+<nav>
+<ul class="mcd-menu">
+<li>
+<li>
+<a href="#">
+<i class="fa fa-comments-o"></i>
+<strong>apps</strong>
+<small>with ato</small>
+</a>
+<ul>
+<li><a href="https://play.google.com/store?hl=en"><i class="fa fa-globe"></i>playstore</a></li>
+<li><a href="https://apkpure.com/" class="biliboard repeating"><i class="fa fa-group"></i>apkpure</a></li>
+<li><a href="http://www.apkhere.com/"><i class="fa fa-trophy"></i>apkhere</a></li>
+<li><a href="https://www.9apps.com/"><i class="fa fa-trophy"></i>9apps</a></li>
+</ul>
+</nav>
+
+<nav>
+<ul class="mcd-menu">
+<li>
+<li>
+<a href="#">
+<i class="fa fa-comments-o"></i>
+<strong>movie</strong>
+<small>with ato</small>
+</a>
+<ul>
+<li><a href="http://moviewatcher.io/"><i class="fa fa-globe"></i>movie watcher</a></li>
+<li><a href="https://www.mydownloadtube.com/" class="biliboard repeating"><i class="fa fa-group"></i>my downloadtube</a></li>
+<li><a href="https://www.worldfree4u.lol/"><i class="fa fa-trophy"></i>worldfree4u</a></li>
+</ul>
+</nav>
+
+<nav>
+<ul class="mcd-menu">
+<li>
+<li>
+<a href="#">
+<i class="fa fa-comments-o"></i>
+<strong>live tv</strong>
+<small>with ato</small>
+</a>
+<ul>
+<li><a href="http://www.yupptv.in/#!/home"><i class="fa fa-globe"></i>all channels to watch</a></li>
+<li><a href="http://www.spectrum.net/tv/live/" class="biliboard repeating"><i class="fa fa-group"></i>live tv</a></li>
+<li><a href="http://www.sonyliv.com/"><i class="fa fa-trophy"></i>sony liv</a></li>
+</ul>
+</nav>
+
+<nav>
+<ul class="mcd-menu">
+<li>
+<li>
+<a href="#">
+<i class="fa fa-comments-o"></i>
+<strong>secondhand things</strong>
+<small>with ato</small>
+</a>
+<ul>
+<li><a href="https://www.olx.in/"><i class="fa fa-globe"></i>olx</a></li>
+<li><a href="http://www.quikr.com/" class="biliboard repeating"><i class="fa fa-group"></i>quicker</a></li>
+</ul>
+</nav>
+
+<nav>
+<ul class="mcd-menu">
+<li>
+<li>
+<a href="#">
+<i class="fa fa-comments-o"></i>
+<strong>social media</strong>
+<small>with ato</small>
+</a>
+<ul>
+<li><a href="https://www.facebook.com/"><i class="fa fa-globe"></i>facebook</a></li>
+<li><a href="https://www.instagram.com/?hl=en" class="biliboard repeating"><i class="fa fa-group"></i>instagram</a></li>
+<li><a href="https://www.tumblr.com/login" class="biliboard repeating"><i class="fa fa-group"></i>tumblr</a></li>
+<li><a href="https://in.pinterest.com/" class="biliboard repeating"><i class="fa fa-group"></i>printerest</a></li>
+<li><a href="https://www.skype.com/en/" class="biliboard repeating"><i class="fa fa-group"></i>skype</a></li>
+</ul>
+</nav>
+</div>
+<font face="algerian" size="10" color="gray">
+<u><i><b>made by:-</u></i></b>
+</font>
+<font face="algerian" size="10" color="#999999">
+<u><i><b>kothari nevil</u></i></b>
+</font>
+
+</center>
+</body>
+</html> 
